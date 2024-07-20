@@ -2,7 +2,7 @@ const lyrics = [
 `well i drank a million billion beers
 and got in my truck and lord i'm drunk
 and i ain't drove this bad in a billion years
-and this torn-up chevy's a piece of junk`,
+and this rusty chevy's a piece of junk`,
 
 `but baby when it rains i drink
 and lately it's been raining a lot
@@ -11,7 +11,7 @@ but first i gotta get to your spot`,
 
 `i'm swerving smashing into every tree
 deer and haybale this cowboy sees and
-these torn tires are turning mud
+these tore-up tires are turning the mud
 and the more i drink yeah the more it floods`,
 
 `oh lady let me love you the right way
@@ -31,7 +31,7 @@ but first i gotta get to your spot`,
 
 `i'm swerving smashing into every tree
 deer and haybale this cowboy sees and
-these torn tires are turning mud
+these tore-up tires are turning the mud
 and the more i drink yeah the more it floods`,
 
 `oh lady let me love you the right way

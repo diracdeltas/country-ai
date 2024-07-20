@@ -1,5 +1,5 @@
 const lyrics = [
-`i drank a million billion beers
+`well i drank a million billion beers
 and got in my truck and lord i'm drunk
 and i ain't drove this bad in a billion years
 and this torn-up chevy's a piece of junk`,
@@ -42,21 +42,26 @@ but first i gotta make it out of my driveway`
 
 let i = 0;
 let j = 0;
+let verse = '';
 
 const body = document.body;
 const div = body.querySelector('div');
 
-function iterate(verse) {
-  const lines = verse.split('\n');
-  div.innerText = lines[j];
-  j = (j + 1) % 4;
-}
-
-body.onkeyup = (e) => {
+body.onkeydown = (e) => {
   if (e.keyCode === 32) {
-    let verse = lyrics[i]
-    body.style.backgroundImage = `url("${i}.jpg")`;
-    body.onclick = () => { iterate(verse) };
-    i = (i + 1) % 8;
+    e.preventDefault();
+    if (!verse) {
+      div.innerText = '';
+      verse = lyrics[i];
+      body.style.backgroundImage = `url("${i}.jpg")`;
+      i = (i + 1) % 8;
+    } else {
+      const lines = verse.split('\n');
+      div.innerText = lines[j];
+      j = (j + 1) % 4;
+      if (j === 0) {
+        verse = '';
+      }
+    }
   }
 }

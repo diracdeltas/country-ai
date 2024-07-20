@@ -42,26 +42,30 @@ but first i gotta make it out of my driveway`
 
 let i = 0;
 let j = 0;
-let verse = '';
+let verse;
+let lines;
 
 const body = document.body;
 const div = body.querySelector('div');
 
+function showLine() {
+  div.innerText = lines[j];
+}
+
 body.onkeydown = (e) => {
   if (e.keyCode === 32) {
     e.preventDefault();
-    if (!verse) {
-      div.innerText = '';
+    if (j === 0) {
+      // change screens
       verse = lyrics[i];
+      lines = verse.split('\n');
       body.style.backgroundImage = `url("${i}.jpg")`;
+      showLine();
       i = (i + 1) % 8;
     } else {
-      const lines = verse.split('\n');
-      div.innerText = lines[j];
-      j = (j + 1) % 4;
-      if (j === 0) {
-        verse = '';
-      }
+      // change lines
+      showLine();
     }
+    j = (j + 1) % 4;
   }
 }
